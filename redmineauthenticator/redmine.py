@@ -11,21 +11,20 @@ from tornado import gen
 import os
 
 class RedmineAuthenticator(Authenticator):
-    password = Unicode(
-        None,
-        allow_none=True,
+    
+    redmine_url = Unicode(
+        os.environ.get('REDMINE_URL', None) ,
+        allow_none=False,
         config=True,
         help="""
-        Set a global password for all users wanting to log in.
-
-        This allows users with any username to log in with the same static password.
+        Url for the Redmine instance.
         """
     )
 
     @gen.coroutine
     def authenticate(self, handler, data):
         
-        url= '{}/users/current.json'.format(os.environ['REDMINE_URL'] )
+        url= '{}/users/current.json'.format(self.redmine_url)
 
         headers = {'Content-type': 'application/json'}
 

@@ -1,3 +1,3 @@
-from dummyauthenticator.dummyauthenticator import DummyAuthenticator
+from redmineauthenticator.redmine import RedmineAuthenticator
 
-__all__ = [DummyAuthenticator]
+__all__ = [RedmineAuthenticator]
