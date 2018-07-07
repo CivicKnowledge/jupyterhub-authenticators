@@ -14,7 +14,7 @@ class RedmineAuthenticator(Authenticator):
     
     redmine_url = Unicode(
         os.environ.get('REDMINE_URL', None) ,
-        allow_none=False,
+        allow_none=True,
         config=True,
         help="""
         Url for the Redmine instance.
@@ -23,6 +23,8 @@ class RedmineAuthenticator(Authenticator):
 
     @gen.coroutine
     def authenticate(self, handler, data):
+    
+        assert self.redmine_url
         
         url= '{}/users/current.json'.format(self.redmine_url)
 
