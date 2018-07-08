@@ -30,12 +30,12 @@ class RedmineAuthenticator(Authenticator):
 
         headers = {'Content-type': 'application/json'}
 
-        print('AUTH!', data['username'], data['password'])
-
         try:
             r = requests.get(url , auth=HTTPBasicAuth(data['username'], data['password']), headers=headers)
             r.raise_for_status()
             return data['username']
+           
+                
         except requests.exceptions.HTTPError as e:
             if e.response.status_code == 401:
                 return None
