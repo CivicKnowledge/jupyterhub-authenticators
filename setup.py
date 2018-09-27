@@ -1,12 +1,12 @@
 from setuptools import setup
 
 setup(
-    name='jupyterhub-redmine-authenticator',
+    name='jh-auth',
     version='0.1.4',
-    description='Redmine authenticator for JupyterHub',
-    url='https://github.com/ericbusboom/jupyterhub-redmine-authenticator.git',
+    description='Custom authenticators for JupyterHub',
+    url='https://github.com/CivicKnowledge/jupyterhub-authenticators.git',
     author='Eric Busboom',
-    author_email='eric@busboom.org',
+    author_email='eric@civicknowledge.com',
     license='2 Clause BSD',
     packages=['redmineauthenticator'],
 )
