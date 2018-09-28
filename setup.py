@@ -9,5 +9,5 @@ setup(
     author_email='eric@civicknowledge.com',
     license='2 Clause BSD',
     packages=['jhauth'],
-    install_requires=['oauthenticator']
+    install_requires=['oauthenticator','requests']
 )
