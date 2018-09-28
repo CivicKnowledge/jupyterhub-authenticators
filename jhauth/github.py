@@ -24,7 +24,7 @@ class GitHubOAuthenticator(_GitHubOAuthenticator):
         lines = [l for l in lines if l] # Remove blanks
 
         if username in lines:
-            return
+            return True
 
         if 'anyone' in lines or '*' in lines:
             return True
