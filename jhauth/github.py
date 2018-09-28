@@ -15,12 +15,12 @@ class GitHubOAuthenticator(_GitHubOAuthenticator):
     @gen.coroutine
     def get_authenticated_user(self, handler, data):
         r = super().get_authenticated_user(handler, data)
-        self.log.info("!!!! get_authenticated_user {} | {} | {}".format(r, handler, data))
+        #self.log.info("!!!! get_authenticated_user {} | {} | {}".format(r, handler, data))
         return r
 
     def check_whitelist(self, username):
         r = super().check_whitelist(username)
-        self.log.info("!!!! check_whitelist {}".format(r))
+        #self.log.info("!!!! check_whitelist {}".format(r))
         return r
 
 
