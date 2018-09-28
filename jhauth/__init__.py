@@ -1,3 +1,4 @@
-from redmineauthenticator.redmine import RedmineAuthenticator
+from .redmine import RedmineAuthenticator
+from .github import GitHubOAuthenticator
 
-__all__ = [RedmineAuthenticator]
+__all__ = [RedmineAuthenticator, GitHubOAuthenticator]
