@@ -8,5 +8,6 @@ setup(
     author='Eric Busboom',
     author_email='eric@civicknowledge.com',
     license='2 Clause BSD',
-    packages=['redmineauthenticator'],
+    packages=['jhauth'],
+    install_requires=['oauthenticator']
 )
