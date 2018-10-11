@@ -15,7 +15,7 @@ from tornado.httpclient import HTTPRequest, AsyncHTTPClient
 class GitHubOAuthenticator(_GitHubOAuthenticator):
 
 
-    def check_whitelist(self, username):
+    def x_check_whitelist(self, username):
         """Check that the username is in an access list stored at Github"""
 
 
