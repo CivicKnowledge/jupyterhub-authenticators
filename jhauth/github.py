@@ -52,7 +52,7 @@ class GitHubOAuthenticator(_GitHubOAuthenticator):
             resp_json = json.loads(resp.body.decode('utf8', 'replace'))
             next_page = next_page_from_links(resp)
             for entry in resp_json:
-                self.log.warning('!!! '+str(entry))
+                self.log.warning('XXX '+str(entry))
                 if username == entry['login']:
                     return True
 
