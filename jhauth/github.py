@@ -73,15 +73,15 @@ async def pre_spawn_hook(spawner):
     except Exception as e:
         spawner.log.warn("NOPE", e)
 
-    try:
-        auth_state = next(spawner.user.get_auth_state())
-        spawner.log.warn("A2 "+ str(auth_state))
-    except Exception as e:
-        spawner.log.warn("NOPE", e)
 
     try:
-        auth_state = await spawner.user.get_auth_state()
-        spawner.log.warn("A3 "+str(auth_state))
+        from time import sleep
+        for i in range(10):
+            auth_state = await spawner.user.get_auth_state()
+            spawner.log.warn("A3 "+str(auth_state))
+
+            sleep(1)
+
     except Exception as e:
         spawner.log.warn("NOPE", e)
 
