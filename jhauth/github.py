@@ -153,10 +153,7 @@ async def pre_spawn_hook(spawner):
     except Exception as e:
         spawner.log.warn("NOPE"+str(e))
 
-
     try:
-        from time import sleep
-        import IOLoop
         auth_state = spawner.user.auth_state
         spawner.log.warn("A2 "+str(auth_state))
 
