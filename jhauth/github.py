@@ -76,8 +76,8 @@ async def pre_spawn_hook(spawner):
 
     try:
         from time import sleep
-
-        auth_state = spawner.user.get_auth_state().result()
+        import IOLoop
+        auth_state = IOLoop.current().run_sync(spawner.user.get_auth_state)
         spawner.log.warn("A2 "+str(auth_state))
 
 
