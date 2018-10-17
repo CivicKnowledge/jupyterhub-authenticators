@@ -64,7 +64,7 @@ def pre_spawn_hook(spawner):
     spawner.log.warn(spawner.authenticator)
 
     try:
-        spawner.log.warn(type(spawner.user)
+        spawner.log.warn(type(spawner.user))
     except:
         spawner.log.warn("NOPE")
 
