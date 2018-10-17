@@ -58,7 +58,7 @@ class GitHubOAuthenticator(_GitHubOAuthenticator):
         return False
 
     def authenticate(self, handler, data=None):
-        raise Exception();
+
         return super().authenticate(handler, data)
 
 
