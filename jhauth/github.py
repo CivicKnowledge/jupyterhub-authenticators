@@ -58,20 +58,20 @@ class GitHubOAuthenticator(_GitHubOAuthenticator):
         return False
 
 def pre_spawn_hook(spawner):
-    spawner.log.warn("!!!! HOOK FOR SPAWNER")
 
+    spawner.log.warn("!!!! HOOK FOR SPAWNER")
     spawner.log.warn("!!!! AUTH State")
+
     try:
-        auth_state = yield spawner.user.get_auth_state()
+        auth_state =  list(spawner.user.get_auth_state())
         spawner.log.warn(auth_state)
     except Exception as e:
         spawner.log.warn("NOPE", e)
 
     try:
-        spawner.log.warn(spawner.user)
-    except:
-        spawner.log.warn("NOPE")
-
-    spawner.log.warn("=============")
+        auth_state = next(spawner.user.get_auth_state())
+        spawner.log.warn(auth_state)
+    except Exception as e:
+        spawner.log.warn("NOPE", e)
 
 
