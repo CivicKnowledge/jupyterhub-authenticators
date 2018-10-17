@@ -6,11 +6,12 @@ import re
 import requests
 from oauthenticator.common import next_page_from_links
 from oauthenticator.github import GitHubOAuthenticator as _GitHubOAuthenticator
-from oauthenticator.github import _api_headers, GITHUB_API, GITHUB_PROTOCOL
+from oauthenticator.github import _api_headers, GITHUB_API, GITHUB_PROTOCOL, GITHUB_HOST
 from os import getenv
 from tornado import gen
 from tornado.httpclient import HTTPRequest, AsyncHTTPClient
 from tornado.httpclient import HTTPRequest, AsyncHTTPClient, HTTPError
+from tornado.httputil import url_concat
 
 class GitHubOAuthenticator(_GitHubOAuthenticator):
 
