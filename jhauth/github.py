@@ -61,7 +61,7 @@ def pre_spawn_hook(spawner):
     spawner.log.warn("!!!! HOOK FOR SPAWNER")
     spawner.log.warn(spawner.get_env())
     spawner.log.warn(spawner.user_options)
-    
+
     try:
         auth_state = yield spawner.user.get_auth_state()
         spawner.log.warn(auth_state)
