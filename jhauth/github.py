@@ -71,7 +71,7 @@ async def pre_spawn_hook(spawner):
 
         spawner.log.warn("A1 "+str(spawner.user.encrypted_auth_state))
     except Exception as e:
-        spawner.log.warn("NOPE", e)
+        spawner.log.warn("NOPE"+str(e))
 
 
     try:
@@ -82,7 +82,7 @@ async def pre_spawn_hook(spawner):
 
 
     except Exception as e:
-        spawner.log.warn("NOPE", e)
+        spawner.log.warn("NOPE"+str(e))
 
     try:
         from time import sleep
@@ -92,6 +92,6 @@ async def pre_spawn_hook(spawner):
 
 
     except Exception as e:
-        spawner.log.warn("NOPE", e)
+        spawner.log.warn("NOPE"+str(e))
 
 
