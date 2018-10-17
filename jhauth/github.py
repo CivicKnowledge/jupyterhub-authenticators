@@ -14,7 +14,6 @@ from tornado.httpclient import HTTPRequest, AsyncHTTPClient
 
 class GitHubOAuthenticator(_GitHubOAuthenticator):
 
-
     def x_check_whitelist(self, username):
         """Check that the username is in an access list stored at Github"""
 
@@ -57,3 +56,9 @@ class GitHubOAuthenticator(_GitHubOAuthenticator):
                     return True
 
         return False
+
+def pre_spawn_hook(spawner):
+    spawner.log.warn("!!!! HOOK FOR SPAWNER")
+    spawner.log.warn(spawner.args)
+    spawner.log.warn(spawner.user_options)
+
