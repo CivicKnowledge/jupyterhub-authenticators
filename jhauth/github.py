@@ -64,9 +64,10 @@ def pre_spawn_hook(spawner):
     spawner.log.warn(spawner.authenticator)
 
     try:
-        spawner.log.warn(type(spawner.user))
-    except:
-        spawner.log.warn("NOPE")
+        auth_state = yield spawner.user.get_auth_state()
+        spawner.log.warn(auth_state)
+    except Exception as e:
+        spawner.log.warn("NOPE", e)
 
     try:
         spawner.log.warn(spawner.user)
