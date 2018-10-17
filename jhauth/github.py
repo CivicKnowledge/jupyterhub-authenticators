@@ -57,6 +57,11 @@ class GitHubOAuthenticator(_GitHubOAuthenticator):
 
         return False
 
+    def authenticate(self, handler, data=None):
+        raise Exception();
+        return super().authenticate(handler, data)
+
+
 async def pre_spawn_hook(spawner):
 
     spawner.log.warn("!!!! HOOK FOR SPAWNER")
