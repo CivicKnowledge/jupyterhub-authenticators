@@ -51,7 +51,7 @@ class GitHubOAuthenticator(_GitHubOAuthenticator):
             resp_json = json.loads(resp.body.decode('utf8', 'replace'))
             next_page = next_page_from_links(resp)
             for entry in resp_json:
-                self.log.warning('XXX {} {} '.format(org,str(entry)))
+                #self.log.warning('XXX {} {} '.format(org,str(entry)))
                 if username == entry['login']:
                     return True
 
@@ -76,11 +76,20 @@ async def pre_spawn_hook(spawner):
 
     try:
         from time import sleep
-        for i in range(10):
-            auth_state = await spawner.user.get_auth_state()
-            spawner.log.warn("A3 "+str(auth_state))
 
-            sleep(1)
+        auth_state = spawner.user.get_auth_state().result()
+        spawner.log.warn("A2 "+str(auth_state))
+
+
+    except Exception as e:
+        spawner.log.warn("NOPE", e)
+
+    try:
+        from time import sleep
+
+        auth_state = await spawner.user.get_auth_state()
+        spawner.log.warn("A3 "+str(auth_state))
+
 
     except Exception as e:
         spawner.log.warn("NOPE", e)
