@@ -63,8 +63,8 @@ async def pre_spawn_hook(spawner):
     spawner.log.warn("!!!! AUTH State")
 
     try:
-        auth_state =  list(spawner.user.get_auth_state())
-        spawner.log.warn("A1 "+str(auth_state))
+
+        spawner.log.warn("A1 "+str(spawner.user.encrypted_auth_state))
     except Exception as e:
         spawner.log.warn("NOPE", e)
 
